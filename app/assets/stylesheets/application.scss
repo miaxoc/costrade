@@ -10,3 +10,48 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// NAVBAR
+.navbar {
+  width: 100vw;
+  height: 125px;
+  background-color: #f2edeb;
+  box-shadow: 10px 5px 5px black;
+  color: black;
+}
+
+
+// FONTS = Nanuto variations
+$nanuto: "Nunito", sans-serif;
+$nanuto-style: normal;
+$nanuto-bold: 700;
+$nanuto-regular: 400;
+
+h1 {
+  font-size: 60px;
+  font-family: $nanuto;
+  font-style: $nanuto-style;
+  font-weight: $nanuto-bold;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: $nanuto;
+  font-style: $nanuto-style;
+  font-weight: $nanuto-bold;
+}
+
+h5 {
+  font-size: 24px;
+  font-family: $nanuto;
+  font-style: $nanuto-style;
+  font-weight: $nanuto-bold;
+}
+
+p {
+  font-size: 24px;
+  font-family: $nanuto;
+  font-style: $nanuto-style;
+  font-weight: $nanuto-regular;
+}
