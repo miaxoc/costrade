@@ -1,4 +1,6 @@
 class CostumesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
   def new
   end
 
@@ -6,6 +8,7 @@ class CostumesController < ApplicationController
   end
 
   def show
+    @costume = Costume.find(params[:id])
   end
 
   def edit

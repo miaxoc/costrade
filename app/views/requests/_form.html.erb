@@ -1,0 +1,35 @@
+<div class="request-form-container">
+  <%= form_with model: @request, local: true do |form| %>
+
+    <div class="date-fields">
+      <div class="field">
+        <%= form.label :rental_from, "rental from" %>
+        <%= form.date_field :rental_from, class: "input-date" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :rental_to, "rental to" %>
+        <%= form.date_field :rental_to, class: "input-date" %>
+      </div>
+    </div>
+
+    <div class="cost-summary">
+      <div class="line-item">
+        <span>¥<%= costume.price %> x 5 days</span>
+        <span>¥8400</span>
+      </div>
+      <div class="line-item">
+        <span>Service fee</span>
+        <span>¥250</span>
+      </div>
+      <div class="line-item total">
+        <span>Total</span>
+        <span>¥8650</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Request", class: "submit-button" %>
+    </div>
+
+  <% end %>
