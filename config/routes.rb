@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :requests, only: [:destroy]
   resources :review, only: [:destroy]
 
-  resources :costumes, only: [:new, :create, :show, :edit, :update] do
+  resources :costumes, only: [:index, :new, :create, :show, :edit, :update] do
     resources :requests, only: [ :create ]
   end
 
