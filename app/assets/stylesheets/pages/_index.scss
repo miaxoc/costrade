@@ -1,2 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.costume-index-card {
+  img {
+    height: 240px;
+    width: 240px;
+  }
+}
