@@ -1,10 +1,14 @@
 class RequestsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :index]
   def create
-    @costume = Costume.find(params[:costume_id] || params[:id])
+    @costume = Costume.find(params[:costume_id])
     @request = Request.new(request_params)
-    @request.costume = costume
-    @request.user = current_user.id
+    @request.costume = @costume
+    @request.user = current_user
+    if @request.save
+      redirect_to costume_path(@costume), alert: "request made!"
+    else
+      render 'create', status: :unprocessable_entity, notice: "request failed"
+    end
   end
 
   def index

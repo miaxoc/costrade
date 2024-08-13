@@ -9,6 +9,7 @@ class CostumesController < ApplicationController
 
   def show
     @costume = Costume.find(params[:id])
+    @request = Request.new
   end
 
   def edit
