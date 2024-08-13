@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     # comment
+    # second comment
   end
 end
