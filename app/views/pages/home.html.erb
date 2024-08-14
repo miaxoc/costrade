@@ -10,7 +10,7 @@
 <%# -------- 3 easy steps images -------- %>
 <div class="container mb-5">
   <div  class= "mt-5 text-center">
-  <div class="row align-items-center mx-5">
+  <div class="row align-items-center mx-5 three_steps">
     <div class="col-4 pfont">
       <h3>Browse</h3>
       <img src="assets/search_red.png" alt="search" class="image mt-2">
@@ -34,6 +34,7 @@
 
 
 <%# -------- Costume index card -------- %>
+<div class="container"><h3>Trending costumes</h3><p><%= link_to "See all costumes", costumes_path  %></p></div>
 <div class="wrapper">
     <% @costumes.each do |costume| %>
       <div class="costume-index-card">
