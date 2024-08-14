@@ -1,2 +1,27 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
+<div class="container">
+  <h1>Requests#index</h1>
+  <p>Find me in app/views/requests/index.html.erb</p>
+
+
+  <div class="request-card">
+    <div class="request-card-head d-flex justify-content-between">
+      <p class="">#dd/mm/yyyy - dd/mm/yyyy</p>
+      <p class="">#request.total_price</p>
+    </div>
+    <div class="request-card-body d-flex">
+      <div class="request-image-placeholder">
+      </div>
+      <div class="request-card-text">
+        <h5 class="request-index-card-title">#Hetsune Miku</h5>
+        <p class="request-index-card-text">#Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor sit amet consequat blandit. Donec in aliquam justo, nec dapibus diam... <%# link_to 'see more' request_path(request)%> </p>
+        <p class="request-index-card-price"><strong>Customer: </strong>#First_name #Last_name</p>
+      </div>
+      <div class="request-card-buttons">
+        <p class="request-accept"><strong>#lt:Accept request</strong></p>
+        <p class="request-decline"><strong>#lt:Decline request</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>

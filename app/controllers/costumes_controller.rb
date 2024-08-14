@@ -1,6 +1,7 @@
 class CostumesController < ApplicationController
 
   def index
+    @costumes = Costume.all
   end
 
   def new
@@ -10,6 +11,7 @@ class CostumesController < ApplicationController
   end
 
   def show
+    @costume = Costume.find(params[:id])
   end
 
   def edit
