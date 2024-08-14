@@ -1,9 +1,131 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.costume-index-card {
-  img {
-    height: 240px;
-    width: 240px;
+
+// COSTUME INDEX
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1.6fr);
+  grid-auto-rows: 45%;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-evenly;
+  margin: 36px;
+
+  .costume-index-card {
+    display: flex;
+    flex-direction:column;
+    width: 260px;
+    height: 400px;
+    padding: 8px;
+    margin: auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 34px;
+
+
+    .costume-image-placeholder {
+      height: 240px;
+      background-color: rgb(213, 213, 213);
+      border-radius: 24px;
+      margin-bottom: 8px;
+    }
+
+    .costume-index-card-title {
+      text-decoration: none;
+      color: $dark-gray
+    }
+
+    .costume-index-card-text {
+      font-size: 16px;
+    }
+
+    .costume-index-card-price {
+      font-size: 20px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .see-more {
+      font-size: 16px;
+      color: $blue;
+    }
+  }
+}
+
+
+
+
+//REQUEST INDEX
+.request-card {
+  height: 200px;
+  border-radius: 34px;
+  background-color: white;
+  margin: 60px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  .request-card-head{
+    height: 50px;
+    border-radius: 34px 34px 0px 0px;
+    background-color: $gray;
+    padding: 8px 24px;
+  }
+
+  .request-card-body {
+    padding: 16px;
+
+    .request-image-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 19px;
+      background-color: $gray;
+    }
+
+    .request-card-text {
+      padding: 0px 16px;
+      .request-index-card-title {
+        text-decoration: none;
+        color: $dark-gray
+      }
+
+      .request-index-card-text {
+        font-size: 16px;
+        width: 760px;
+      }
+
+      .see-more {
+        font-size: 16px;
+        color: $blue;
+      }
+
+      .request-index-card-price {
+        font-size: 20px;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+    }
+  }
+  .request-card-buttons{
+    width: 196px;
+
+    .request-accept{
+      background-color: $danger;
+      margin: 8px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      height: 48px;
+      border-radius: 16px;
+    }
+
+    .request-decline{
+      background-color: $gray;
+      margin: 8px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      height: 48px;
+      border-radius: 16px;
+    }
   }
 }

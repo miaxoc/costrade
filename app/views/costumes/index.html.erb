@@ -1,2 +1,15 @@
-<h1>Costumes#index</h1>
-<p>app/views/costumes/index.html.erb</p>
+<div class="container">
+  <h1>Costumes#index</h1>
+  <p>app/views/costumes/index.html.erb</p>
+
+  <div class="wrapper">
+    <% @costumes.each do |costume| %>
+      <div class="costume-index-card">
+        <div class="costume-image-placeholder"></div>
+        <h5><%= link_to costume.title, costume_path(costume), class: "costume-index-card-title" %></h5>
+        <p class="costume-index-card-text"><%= costume.description %>...  <%= link_to 'see more', costume_path(costume) %></p>
+        <p class="costume-index-card-price"><strong><%= costume.price %></strong> jpy/day</p>
+      </div>
+    <% end %>
+  </div>
+</div>
