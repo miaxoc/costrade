@@ -1,0 +1,34 @@
+<div class="request-form-container">
+  <%= simple_form_for [@costume, @request], url: costume_requests_path(@costume), method: :post do |form| %>
+
+    <div class="date-fields">
+      <div class="field">
+        <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date' }, html5: true %>
+      </div>
+
+      <div class="field">
+        <%= form.input :end_date, as: :date, label: "rental to", input_html: { class: 'input-date' }, html5: true %>
+      </div>
+    </div>
+
+    <div class="cost-summary">
+      <div class="line-item">
+        <span>¥<%= @costume.price %> x <%= @days || 0 %> days</span>
+        <span>¥<%= @costume.price * (@days || 0) %></span>
+      </div>
+      <div class="line-item">
+        <span>Service fee</span>
+        <span>¥250</span>
+      </div>
+      <div class="line-item total">
+        <span>Total</span>
+        <span>¥<%= @costume.price * (@days || 0) + 250 %></span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.button :submit, "Request", class: "submit-button" %>
+    </div>
+
+  <% end %>
+</div>
