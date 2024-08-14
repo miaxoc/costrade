@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,13 +14,15 @@ Rails.application.routes.draw do
   resources :requests, only: [:destroy]
   resources :review, only: [:destroy]
 
-  resources :costumes, only: [:new, :create, :show, :edit, :update] do
+  resources :costumes, only: [:index, :new, :create, :show, :edit, :update] do
     resources :requests, only: [ :create ]
   end
 
   resources :requests, only: [ :index ] do
     resources :reviews, only: [:create, :update]
   end
+
+  resources :users, only: [:show]
 
   namespace :my do
     resources :requests, only: :index

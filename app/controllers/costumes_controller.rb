@@ -1,5 +1,7 @@
 class CostumesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  def index
+    @costumes = Costume.all
+  end
 
   def new
   end
