@@ -25,5 +25,33 @@
 }
 
 .show-right {
+  padding: 10px 32px;
 
+  .costume-show-text {
+    p {
+      font-size: 16px;
+    }
+  }
+
+}
+
+
+.form-design {
+  border-radius: 32px;
+}
+
+
+.send-request {
+  background-color: $danger;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  height: 48px;
+  width: 160px;
+  border-radius: 16px;
+  margin: 8px;
+}
+
+.request-confirmation {
+  border: 1px solid black;
 }

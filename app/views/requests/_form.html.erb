@@ -1,4 +1,4 @@
-<div class="request-form-container" data-controller="price">
+<div class="request-form-container form-design" data-controller="price">
   <div >
     <%= simple_form_for [@costume, @request], html: {data: {price_target: "form", action: "submit->price#submit"}} do |form| %>
       <div class="date-fields">
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="actions">
-        <%= form.button :submit, "Request", class: "submit-button" %>
+        <%= form.button :submit, "Request", class: "send-request" %>
       </div>
     <% end %>
     <!-- Confirmation message, initially hidden -->
