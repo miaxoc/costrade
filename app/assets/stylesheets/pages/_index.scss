@@ -21,6 +21,8 @@
     margin: auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 34px;
+    position: relative;
+
 
 
     .costume-image-placeholder {
@@ -43,6 +45,9 @@
       font-size: 20px;
       margin: 0 auto;
       justify-content: center;
+      position: absolute;
+      bottom: 16px;
+      left: 20%;
     }
 
     .see-more {
@@ -60,25 +65,18 @@
   height: 200px;
   border-radius: 34px;
   background-color: white;
-  margin: 60px;
+  margin: 24px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   .request-card-head{
     height: 50px;
     border-radius: 34px 34px 0px 0px;
-    background-color: $gray;
+    background-color: #D9D9D9;
     padding: 8px 24px;
   }
 
   .request-card-body {
     padding: 16px;
-
-    .request-image-placeholder {
-      width: 120px;
-      height: 120px;
-      border-radius: 19px;
-      background-color: $gray;
-    }
 
     .request-card-text {
       padding: 0px 16px;
@@ -108,24 +106,29 @@
   .request-card-buttons{
     width: 196px;
 
+    justify-content: center;
+
     .request-accept{
-      background-color: $danger;
-      margin: 8px;
+      background-color: $warning;
       font-size: 20px;
       color: white;
       text-align: center;
       height: 48px;
       border-radius: 16px;
+      margin: 8px;
+      font-weight: 700;
     }
 
     .request-decline{
-      background-color: $gray;
-      margin: 8px;
+      background-color: #D9D9D9;
+
       font-size: 20px;
       color: white;
       text-align: center;
       height: 48px;
       border-radius: 16px;
+      margin: 8px;
+      font-weight: 700;
     }
   }
 }

@@ -15,9 +15,42 @@
   </head>
 
   <body>
-  <div class="navbar">
-    <p>Place-holder Navbar</p>
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/costumes">
+        <%= image_tag 'COSTRADE.webp' %>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">My Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/requests">Requests</a>
+          </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no" />
+            <div class="dropdown-menu dropdown-menu-end bg-white" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-black" href="#">My page</a>
+              <a class="dropdown-item text-black" href="/requests">Requests</a>
+              <a class="dropdown-item text-black" href="/requests">Settings</a>
+              <a class="dropdown-item text-black" data-turbo-method="delete" href="#">Log out</a>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+        </ul>
+      </div>
+    </div>
   </div>
+
+
+
     <%= yield %>
   </body>
 </html>

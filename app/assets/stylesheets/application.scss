@@ -10,16 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-
-// NAVBAR
-.navbar {
-  width: 100vw;
-  height: 56px;
-  background-color: $gray;
-  box-shadow: 1px 1px 10px black;
-  color: black;
-}
+@import "requests";
+@import "pages/costumeshow";
 
 
 // FONTS = Nanuto variations

@@ -1,44 +1,40 @@
-<h6>Costumes#show</h6>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title><%= @costume.title %></title>
-  </head>
-  <body>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="image-box">
-            <%= image_tag @costume.image_url, alt: @costume.title, class: "img-fluid mb-3" %>
-            <div class="row">
-              <div class="col-2">
-                <img src="<%= 'toadd'  %>" alt="Thumbnail 1" class="img-fluid">
-              </div>
-              <div class="col-2">
-                <img src="<%= 'toadd'  %>" alt="Thumbnail 1" class="img-fluid">
-              </div>
-            </div>
+
+<%# <h1>Costumes#show</h1>
+<p>Find me in app/views/costumes/show.html.erb</p>
+<%= render 'requests/form', costume: @costume, request: @request %>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="image-box">
+        <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[0]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
+         alt: @costume.title, class: "img-fluid mb-3" %>
+        <div class="row">
+          <div class="col-2">
+            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[1]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
+             alt: "Thumbnail 1", class: "img-fluid" %>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="text-box">
-            <h1><%= @costume.title %></h1>
-            <div class="user-info d-flex align-items-center mb-3">
-              <%= image_tag url_for(@costume.user.photo) if @costume.user.photo.attached?, class: "rounded-circle mr-2", width: "50", alt: "user-avatar" %>
-              <span class="user-id"><%= @costume.user.name %></span>
-            </div>
-            <p><%= @costume.description %></p>
-            <p><strong>Size:</strong> <%= @costume.size %></p>
-            <p><strong>Category:</strong><%= @costume.category %></p>
-            <div class="render-form mt-4 p-3 bg-light border">
-              <button class="btn btn-primary btn-block">Request</button>
-            </div>
+          <div class="col-2">
+            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
+             alt: "Thumbnail 2", class: "img-fluid" %>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html>
+    <div class="col-md-6">
+      <div class="text-box">
+        <h1><%= @costume.title %></h1>
+        <div class="user-info d-flex align-items-center mb-3">
+          <%= image_tag @costume.user.photo.attached? ? url_for(@costume.user.photo) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg", class: "rounded-circle mr-2", width: "50", alt: "user-avatar" %>
+          <span class="user-id"><%= @costume.user.username %></span>
+        </div>
+        <p><%= @costume.description %></p>
+        <p><strong>Size:</strong> <%= @costume.size %></p>
+        <p><strong>Category:</strong><%= @costume.category %></p>
+        <div class="render-form mt-4 p-3 bg-light border" data-controller="price">
+          <%= render 'requests/form', costume: @costume, request: @request %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
