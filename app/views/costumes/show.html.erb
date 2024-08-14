@@ -27,7 +27,7 @@
             <p><%= @costume.description %></p>
             <p><strong>Size:</strong> <%= @costume.size %></p>
             <p><strong>Category:</strong><%= @costume.category %></p>
-            <div class="render-form mt-4 p-3 bg-light border">
+            <div class="render-form mt-4 p-3 bg-light border" data-controller="price">
               <%= render 'requests/form', costume: @costume, request: @request %>
             </div>
           </div>
