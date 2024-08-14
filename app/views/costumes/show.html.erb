@@ -2,36 +2,54 @@
 <%# <h1>Costumes#show</h1>
 <p>Find me in app/views/costumes/show.html.erb</p>
 <%= render 'requests/form', costume: @costume, request: @request %>
-<div class="container mt-4">
+<div class="container">
+<h2 class="border-bottom my-3">Costume Page</h2>
   <div class="row">
-    <div class="col-md-6">
-      <div class="border">
-        <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[0]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
-         alt: @costume.title, class: "img-fluid mb-3" %>
+    <div class="col">
+      <div class="show-left">
+
+        <div class = "costume-show-image-primary">
+          <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[0]) : "https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg", alt: @costume.title, class: "img-fluid mb-3", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+        </div>
+
         <div class="row">
-          <div class="col-2">
-            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[1]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
-             alt: "Thumbnail 1", class: "img-fluid" %>
+          <div class="costume-show-image-secondary">
+            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", class: "img-fluid", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
-          <div class="col-2">
-            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
-             alt: "Thumbnail 2", class: "img-fluid" %>
+
+          <div class="costume-show-image-secondary">
+            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[1]) : "https://img.fruugo.com/product/2/49/693407492_max.jpg", alt: "Thumbnail 1", class: "img-fluid", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
+
+          <div class="costume-show-image-secondary">
+            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", class: "img-fluid", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+          </div>
+
+          <div class="costume-show-image-secondary">
+            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", class: "img-fluid", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="col-md-6 ">
-      <div class="text-box border">
+
+    <div class="col">
+
+      <div class="show-right">
         <div class="costumeinfo" style="border: 1px solid black; margin: 10px;  background-color: white">
           <h1><%= @costume.title %></h1>
+
           <div class="user-info d-flex justify-content-end mb-3">
             <%= image_tag @costume.user.photo.attached? ? url_for(@costume.user.photo) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg", class: "rounded-circle mr-2 ", width: "50", alt: "user-avatar", style: "border:  1px solid black" %>
             <span class="user-id "><%= @costume.user.username %></span>
           </div>
+
           <p><%= @costume.description %></p>
           <p><strong>Size:</strong> <%= @costume.size %></p>
           <p><strong>Category:</strong><%= @costume.category %></p>
+
         </div>
+
         <div class="render-form mt-4 p-3 bg-light border" style=" margin: 10px" data-controller="price">
           <%= render 'requests/form', costume: @costume, request: @request %>
         </div>
@@ -50,4 +68,3 @@
     </div>
   </div>
 </div>
-
