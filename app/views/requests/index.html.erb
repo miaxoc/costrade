@@ -5,17 +5,20 @@
 
   <div class="request-card">
     <div class="request-card-head d-flex justify-content-between">
-
-      <p class="">#dd/mm/yyyy - dd/mm/yyyy</p>
-      <p class="">#request.total_price</p>
+      <% @requests.each do |request| %>
+        <p><%= request.start_date %> ~ <%= request.end_date %></p>
+        <p>Total: request.price (not working)</p>
+      <% end %>
     </div>
     <div class="request-card-body d-flex">
       <div class="request-image-placeholder">
       </div>
       <div class="request-card-text">
-        <h5 class="request-index-card-title"></h5>
-        <p class="request-index-card-text">#Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor sit amet consequat blandit. Donec in aliquam justo, nec dapibus diam... <%# link_to 'see more' request_path(request)%> </p>
-        <p class="request-index-card-price"><strong>Customer: </strong>#First_name #Last_name</p>
+        <% @requests.each do |request| %>
+          <h5 class="request-index-card-title"><%= request.costume.title %></h5>
+          <p class="request-index-card-text"><%= request.costume.description %></p>
+          <p class="request-index-card-price"><strong>Customer: </strong><%= request.costume.user.username %></p>
+        <% end %>
       </div>
       <div class="request-card-buttons">
         <p class="request-accept"><strong>Request pending...</strong></p>
