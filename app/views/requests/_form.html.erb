@@ -1,6 +1,6 @@
 <div class="request-form-container" data-controller="price">
-  <div data-price-target="form" data-action="submit->price#submit">
-    <%= simple_form_for [@costume, @request], url: costume_requests_path(@costume), method: :post, remote: true do |form| %>
+  <div >
+    <%= simple_form_for [@costume, @request], html: {data: {price_target: "form", action: ""}} do |form| %>
       <div class="date-fields">
         <div class="field">
           <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date', data: {price_target: "startDate", action: "change->price#calculate"}, value: Date.today }, html5: true %>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="actions">
-        <%= form.button :submit, "Request", class: "submit-button", data: { action: "click->price#remove_form" } %>
+        <%= form.button :submit, "Request", class: "submit-button" %>
       </div>
     <% end %>
     <!-- Confirmation message, initially hidden -->
