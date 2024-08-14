@@ -1,6 +1,6 @@
 <div class="request-form-container" data-controller="price">
   <div >
-    <%= simple_form_for [@costume, @request], html: {data: {price_target: "form", action: ""}} do |form| %>
+    <%= simple_form_for [@costume, @request], html: {data: {price_target: "form", action: "submit->price#submit"}} do |form| %>
       <div class="date-fields">
         <div class="field">
           <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date', data: {price_target: "startDate", action: "change->price#calculate"}, value: Date.today }, html5: true %>
