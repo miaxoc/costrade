@@ -4,18 +4,27 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.costume = @costume
     @request.user = current_user
+
     if @request.save
-      respond_to do |format|
-        format.html { redirect_to @costume, notice: 'Request was successfully created.' }
-        format.js   # This will look for create.js.erb or use a no-content response
-        end
+      redirect_to requests_path
     else
-      render 'create', status: :unprocessable_entity, notice: "request failed"
+      render 'requests/form', status: :unprocessable_entity
     end
+
+    # respond_to do |format|
+
+      # if @request.save
+        # format.html { redirect_to costume_path(@costume) }
+        # format.json { redirect_to costume_path(@costume) } # Follows the classic Rails flow and look for a create.json view
+      # else
+      #   format.html { render "requests/new", status: :unprocessable_entity }
+      #   format.json # Follows the classic Rails flow and look for a create.json view
+      # end
+    # end
   end
 
   def index
-    @requests = Request.all
+    @requests = Request.where(user: current_user)
   end
 
   def destroy
