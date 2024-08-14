@@ -36,14 +36,14 @@
 
       <div class="show-right">
         <div class="costume-show-text">
-          <div class="costume-head d-flex justify-content-between" style="height: 80px;">
+          <div class="costume-head d-flex justify-content-between me-2" style="height: 80px;">
             <h1><%= @costume.title %></h1>
             <%= image_tag @costume.user.photo.attached? ? url_for(@costume.user.photo) : src="https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no", class: "rounded-circle mr-2 ", alt: "user-avatar", style: "height: 60px; width: 60px;" %>
           </div>
           <div>
             <p class="my-2"><%= @costume.description %></p>
-            <p class="my-2"><strong>Size:</strong> <%= @costume.size %></p>
-            <p class="my-2"><strong>Category:</strong><%= @costume.category %></p>
+            <p class="my-2"><strong>Size: </strong><%= @costume.size %></p>
+            <p class="my-2"><strong>Category: </strong><%= @costume.category %></p>
           </div>
         </div>
 

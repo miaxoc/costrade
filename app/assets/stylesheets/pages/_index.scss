@@ -3,6 +3,17 @@
 
 
 // COSTUME INDEX
+.new-costume{
+  background-color: $danger;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  height: 48px;
+  border-radius: 16px;
+  margin: 8px 32px;
+}
+
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1.6fr);
