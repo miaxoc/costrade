@@ -1,7 +1,7 @@
 <%# -------- Banner -------- %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/home_banner.png);">
   <div class="container">
-    <h1><strong>Constrade</strong></h1>
+    <h1><strong>Costrade</strong></h1>
     <p>Rent costumes with 3 easy steps!</p>
     <%= link_to "Sign up Now!", new_user_registration_path, class: "btn btn-danger text-white mt-3 p-2" %>
   </div>
@@ -13,19 +13,19 @@
   <div class="row align-items-center mx-5 three_steps">
     <div class="col-4 pfont">
       <h3>Browse</h3>
-      <img src="assets/search_red.png" alt="search" class="image mt-2">
+      <%= image_tag 'search_red.png', alt: "search", class:"image mt-2" %>
       <div>
       <p>Find the perfect costume</p>
       </div>
     </div>
     <div class="col-4  pfont">
       <h3>Rent</h3>
-      <img src="assets/rent_red.png" alt="search" class="image mt-2">
+      <%= image_tag 'rent_red.png', alt: "search", class:"image mt-2" %>
       <p>Request & Rent!</p>
     </div>
     <div class="col-4  pfont">
       <h3>Return</h3>
-      <img src="assets/return_red.png" alt="search" class="image mt-2">
+      <%= image_tag 'return_red.png', alt: "search", class:"image mt-2" %>
       <p>Enjoy your costume & Return</p>
     </div>
   </div>
