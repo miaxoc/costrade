@@ -38,7 +38,17 @@ export default class extends Controller {
     event.preventDefault();
     this.element.querySelector("form").style.display = "none"
     this.confirmationTarget.style.display = "block"
+    const formData = new FormData(this.formTarget)
+    console.log(this.formTarget.action)
+
+    fetch(this.formTarget.action, {
+      method: "POST", // Could be dynamic with Stimulus values
+      headers: { "Accept": "application/json" },
+      body: formData
+    })
   }
+
+
 
   //  // Handle successful form submission
   //  handleSuccess(event) {
