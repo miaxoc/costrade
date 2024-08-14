@@ -5,7 +5,7 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-6">
-      <div class="image-box">
+      <div class="border">
         <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[0]) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg",
          alt: @costume.title, class: "img-fluid mb-3" %>
         <div class="row">
@@ -20,18 +20,31 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="text-box">
-        <h1><%= @costume.title %></h1>
-        <div class="user-info d-flex align-items-center mb-3">
-          <%= image_tag @costume.user.photo.attached? ? url_for(@costume.user.photo) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg", class: "rounded-circle mr-2", width: "50", alt: "user-avatar" %>
-          <span class="user-id"><%= @costume.user.username %></span>
+    <div class="col-md-6 ">
+      <div class="text-box border">
+        <div class="costumeinfo" style="border: 1px solid black; margin: 10px;  background-color: white">
+          <h1><%= @costume.title %></h1>
+          <div class="user-info d-flex justify-content-end mb-3">
+            <%= image_tag @costume.user.photo.attached? ? url_for(@costume.user.photo) : "https://images.halloweencostumes.com/products/4714/1-1/child-pumpkin-costume.jpg", class: "rounded-circle mr-2 ", width: "50", alt: "user-avatar", style: "border:  1px solid black" %>
+            <span class="user-id "><%= @costume.user.username %></span>
+          </div>
+          <p><%= @costume.description %></p>
+          <p><strong>Size:</strong> <%= @costume.size %></p>
+          <p><strong>Category:</strong><%= @costume.category %></p>
         </div>
-        <p><%= @costume.description %></p>
-        <p><strong>Size:</strong> <%= @costume.size %></p>
-        <p><strong>Category:</strong><%= @costume.category %></p>
-        <div class="render-form mt-4 p-3 bg-light border" data-controller="price">
+        <div class="render-form mt-4 p-3 bg-light border" style=" margin: 10px" data-controller="price">
           <%= render 'requests/form', costume: @costume, request: @request %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="reviews">
+        <div class="review border"  style=" margin: 10px ">
+          <h4>reviews</h4>
+          <textarea name="" id="" value ="this is a nice costume">
+        </textarea>
         </div>
       </div>
     </div>
