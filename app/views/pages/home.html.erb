@@ -1,2 +1,53 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# -------- Banner -------- %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/home_banner.png);">
+  <div class="container">
+    <h1><strong>Constrade</strong></h1>
+    <p>Rent costumes with 3 easy steps!</p>
+    <%= link_to "Sign up Now!", new_user_registration_path, class: "btn btn-danger text-white mt-3 p-2" %>
+  </div>
+</div>
+
+<%# -------- 3 easy steps images -------- %>
+<div class="container mb-5">
+  <div  class= "mt-5 text-center">
+  <div class="row align-items-center mx-5 three_steps">
+    <div class="col-4 pfont">
+      <h3>Browse</h3>
+      <img src="assets/search_red.png" alt="search" class="image mt-2">
+      <div>
+      <p>Find the perfect costume</p>
+      </div>
+    </div>
+    <div class="col-4  pfont">
+      <h3>Rent</h3>
+      <img src="assets/rent_red.png" alt="search" class="image mt-2">
+      <p>Request & Rent!</p>
+    </div>
+    <div class="col-4  pfont">
+      <h3>Return</h3>
+      <img src="assets/return_red.png" alt="search" class="image mt-2">
+      <p>Enjoy your costume & Return</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<%# -------- Costume index card -------- %>
+<div class="container"><h3>Trending costumes</h3><p><%= link_to "See all costumes", costumes_path  %></p></div>
+<div class="wrapper">
+    <% @costumes.each do |costume| %>
+      <div class="costume-index-card">
+        <div class="costume-image-placeholder"></div>
+        <h5><%= link_to costume.title, costume_path(costume), class: "costume-index-card-title" %></h5>
+        <p class="costume-index-card-text"><%= costume.description %>...  <%= link_to 'see more', costume_path(costume) %></p>
+        <p class="costume-index-card-price"><strong><%= costume.price %></strong> jpy/day</p>
+      </div>
+    <% end %>
+    <%# -------- Add your costume to lend? -------- %>
+    <div class="costume-index-card bg-warning">
+        <div class="costume-image-placeholder"></div>
+        <p class="costume-index-card-text">Add your own costumes to lend!</p>
+          <%= link_to "Add costumes!", new_costume_path, class: "btn btn-danger text-white mt-3 p-2" %>
+      </div>
+  </div>

@@ -24,6 +24,7 @@
     position: relative;
 
 
+
     .costume-image-placeholder {
       height: 240px;
       background-color: rgb(213, 213, 213);
@@ -104,6 +105,7 @@
   }
   .request-card-buttons{
     width: 196px;
+
     justify-content: center;
 
     .request-accept{
@@ -119,6 +121,7 @@
 
     .request-decline{
       background-color: #D9D9D9;
+
       font-size: 20px;
       color: white;
       text-align: center;
