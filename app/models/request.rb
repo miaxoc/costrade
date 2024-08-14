@@ -6,4 +6,6 @@ class Request < ApplicationRecord
   validates :start_date, presence: true #js
   validates :end_date, presence: true #js
 
+  enum :status, [:pending, :accepted, :declined]
+  # enum :status, {pending: "pending", accepted: "accepted", declined: "declined"}
 end
