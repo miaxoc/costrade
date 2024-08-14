@@ -15,6 +15,7 @@ class RequestsController < ApplicationController
   end
 
   def index
+    @requests = Request.all
   end
 
   def destroy

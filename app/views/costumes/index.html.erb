@@ -1,14 +1,15 @@
 <div class="container">
-  <h1>Costumes#index</h1>
-  <p>app/views/costumes/index.html.erb</p>
+  <h2 class="border-bottom my-3">Costume listings</h2>
 
   <div class="wrapper">
     <% @costumes.each do |costume| %>
       <div class="costume-index-card">
-        <div class="costume-image-placeholder"></div>
-        <h5><%= link_to costume.title, costume_path(costume), class: "costume-index-card-title" %></h5>
-        <p class="costume-index-card-text"><%= costume.description %>...  <%= link_to 'see more', costume_path(costume) %></p>
-        <p class="costume-index-card-price"><strong><%= costume.price %></strong> jpy/day</p>
+        <div class="costume-image-placeholder">
+          <%= image_tag costume.photos.attached? ? cl_image_path(costume.photo.key) : image_path('https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg'), style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;"%>
+        </div>
+          <h5><%= link_to costume.title, costume_path(costume), class: "costume-index-card-title" %></h5>
+          <p class="costume-index-card-text"><%= costume.description[0,20] %>...  <%= link_to 'see more', costume_path(costume) %></p>
+          <p class="costume-index-card-price"><strong><%= costume.price %></strong> jpy/day</p>
       </div>
     <% end %>
   </div>
