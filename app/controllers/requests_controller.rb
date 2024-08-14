@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
     @request.costume = @costume
     @request.user = current_user
     if @request.save
-      redirect_to costume_path(@costume), alert: "request made!"
+      redirect_to costume_path(@costume, notice: "request made!")
     else
       render 'create', status: :unprocessable_entity, notice: "request failed"
     end
