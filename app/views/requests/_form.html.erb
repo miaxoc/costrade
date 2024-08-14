@@ -3,18 +3,18 @@
 
     <div class="date-fields">
       <div class="field">
-        <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date' }, html5: true %>
+        <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date', data: {price_target: "startDate", action: "change->price#calculate"}, value: Date.today }, html5: true %>
       </div>
 
       <div class="field">
-        <%= form.input :end_date, as: :date, label: "rental to", input_html: { class: 'input-date' }, html5: true %>
+        <%= form.input :end_date, as: :date, label: "rental to", input_html: { class: 'input-date', data: {price_target: "endDate", action: "change->price#calculate"}, value: Date.tomorrow }, html5: true %>
       </div>
     </div>
 
     <div class="cost-summary">
       <div class="line-item">
-        <span>¥<%= @costume.price %> x <%= @days || 0 %> days</span>
-        <span>¥<%= @costume.price * (@days || 0) %></span>
+        <span>¥<span data-price-target="price"><%= @costume.price %></span> x <span data-price-target="days"><%= 1 %></span> days</span>
+        <span data-price-target="subtotal">¥<%= @costume.price %></span>
       </div>
       <div class="line-item">
         <span>Service fee</span>
@@ -22,7 +22,7 @@
       </div>
       <div class="line-item total">
         <span>Total</span>
-        <span>¥<%= @costume.price * (@days || 0) + 250 %></span>
+        <span data-price-target="total">¥<%= @costume.price %></span>
       </div>
     </div>
 
