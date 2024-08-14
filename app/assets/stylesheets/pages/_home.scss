@@ -19,3 +19,68 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+h3{
+  color: $red;
+  font-weight: 400;
+}
+
+.image{
+  height: 200px;
+  margin-bottom: 16px;
+}
+
+.pfont p{
+  font-size: medium;
+  color: $red;
+
+}
+
+.wrapper_home {
+  display: grid;
+  grid-template-columns: repeat(4, 1.6fr);
+  grid-auto-rows: 45%;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-evenly;
+  margin: 36px;
+
+  .costume-index-card {
+    display: flex;
+    flex-direction:column;
+    width: 260px;
+    height: 400px;
+    padding: 8px;
+    margin: auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 34px;
+
+
+    .costume-image-placeholder {
+      height: 240px;
+      background-color: rgb(213, 213, 213);
+      border-radius: 24px;
+      margin-bottom: 8px;
+    }
+
+    .costume-index-card-title {
+      text-decoration: none;
+      color: $dark-gray
+    }
+
+    .costume-index-card-text {
+      font-size: 16px;
+    }
+
+    .costume-index-card-price {
+      font-size: 20px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .see-more {
+      font-size: 16px;
+      color: $blue;
+    }
+  }
+}
