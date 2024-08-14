@@ -5,6 +5,7 @@
 
   <div class="request-card">
     <div class="request-card-head d-flex justify-content-between">
+
       <p class="">#dd/mm/yyyy - dd/mm/yyyy</p>
       <p class="">#request.total_price</p>
     </div>
@@ -17,8 +18,8 @@
         <p class="request-index-card-price"><strong>Customer: </strong>#First_name #Last_name</p>
       </div>
       <div class="request-card-buttons">
-        <p class="request-accept"><strong>#lt:Accept request</strong></p>
-        <p class="request-decline"><strong>#lt:Decline request</strong></p>
+        <p class="request-accept"><strong>Request pending...</strong></p>
+        <p class="request-decline"><strong><%= link_to 'Delete request', '/destroy', class: "text-decoration-none text-white" %></strong></p>
       </div>
     </div>
 
