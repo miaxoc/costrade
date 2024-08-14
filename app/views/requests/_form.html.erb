@@ -1,34 +1,35 @@
-<div class="request-form-container">
-  <%= simple_form_for [@costume, @request], url: costume_requests_path(@costume), method: :post do |form| %>
-
-    <div class="date-fields">
-      <div class="field">
-        <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date', data: {price_target: "startDate", action: "change->price#calculate"}, value: Date.today }, html5: true %>
+<div class="request-form-container" data-controller="price">
+  <div data-price-target="form" data-action="submit->price#submit">
+    <%= simple_form_for [@costume, @request], url: costume_requests_path(@costume), method: :post, remote: true do |form| %>
+      <div class="date-fields">
+        <div class="field">
+          <%= form.input :start_date, as: :date, label: "rental from", input_html: { class: 'input-date', data: {price_target: "startDate", action: "change->price#calculate"}, value: Date.today }, html5: true %>
+        </div>
+        <div class="field">
+          <%= form.input :end_date, as: :date, label: "rental to", input_html: { class: 'input-date', data: {price_target: "endDate", action: "change->price#calculate"}, value: Date.tomorrow }, html5: true %>
+        </div>
       </div>
-
-      <div class="field">
-        <%= form.input :end_date, as: :date, label: "rental to", input_html: { class: 'input-date', data: {price_target: "endDate", action: "change->price#calculate"}, value: Date.tomorrow }, html5: true %>
+      <div class="cost-summary">
+        <div class="line-item">
+          <span>¥<span data-price-target="price"><%= @costume.price %></span> x <span data-price-target="days"><%= 1 %></span> days</span>
+          <span data-price-target="subtotal">¥<%= @costume.price %></span>
+        </div>
+        <div class="line-item">
+          <span>Service fee</span>
+          <span>¥250</span>
+        </div>
+        <div class="line-item total">
+          <span>Total</span>
+          <span data-price-target="total">¥<%= @costume.price %></span>
+        </div>
       </div>
+      <div class="actions">
+        <%= form.button :submit, "Request", class: "submit-button", data: { action: "click->price#remove_form" } %>
+      </div>
+    <% end %>
+    <!-- Confirmation message, initially hidden -->
+    <div data-price-target="confirmation" style="display: none;">
+      <p>Your request has been submitted successfully!</p>
     </div>
-
-    <div class="cost-summary">
-      <div class="line-item">
-        <span>¥<span data-price-target="price"><%= @costume.price %></span> x <span data-price-target="days"><%= 1 %></span> days</span>
-        <span data-price-target="subtotal">¥<%= @costume.price %></span>
-      </div>
-      <div class="line-item">
-        <span>Service fee</span>
-        <span>¥250</span>
-      </div>
-      <div class="line-item total">
-        <span>Total</span>
-        <span data-price-target="total">¥<%= @costume.price %></span>
-      </div>
-    </div>
-
-    <div class="actions">
-      <%= form.button :submit, "Request", class: "submit-button" %>
-    </div>
-
-  <% end %>
+  </div>
 </div>
