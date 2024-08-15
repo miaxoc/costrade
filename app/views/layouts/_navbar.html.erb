@@ -1,0 +1,38 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/costumes">
+        <%= image_tag 'costrade_logo.png' %>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto align-middle">
+          <li class="nav-item active">
+            <%= link_to requests_path, class: "icon mx-3" do %><i class="fa-solid fa-bell"></i><%end%>
+          </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            src="<%= asset_path('default_user_signedin_img.png') %>" />
+            <div class="dropdown-menu dropdown-menu-end bg-white" aria-labelledby="navbarDropdown">
+            <% if current_user %>
+              <a class="dropdown-item text-black" href="/requests">My page</a>
+              <%# <a><%= link_to "Log out", destroy_user_session_path, method: :delete %></a>
+              <a class="dropdown-item text-black" data-turbo-method="delete" href="#">Log out</a>
+            <% else %>
+              <a class="dropdown-item text-black" href="/users/sign_in">Sign in</a>
+            <% end %>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<%# ----------------Coiped code---------------- %>
+
+  <%#<img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+   <%# src="<%= current_user.nil? ? asset_path('default_user_img.png') : (current_user.profile_image.present? ? current_user.profile_image.url : asset_path('default_user_signedin_img.png')) %>
