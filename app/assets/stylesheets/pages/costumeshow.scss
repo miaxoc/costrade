@@ -1,0 +1,58 @@
+.show-left {
+  background-color: white;
+  width: 500px;
+  height: 619px;
+  padding: 20px;
+  border-radius: 44px;
+
+
+  .costume-show-image-primary {
+    height: 460px;
+    width: 460px;
+    background-color: rgb(213, 213, 213);
+    border-radius: 24px;
+    margin-bottom: 20px;
+  }
+
+  .costume-show-image-secondary {
+    height: 103px;
+    width: 103px;
+    border-radius: 24px;
+    margin: 0px auto;
+    padding: 0px;
+  }
+
+
+}
+
+.show-right {
+  padding: 10px 32px;
+
+  .costume-show-text {
+    p {
+      font-size: 16px;
+    }
+  }
+
+}
+
+
+.form-design {
+  border-radius: 32px;
+}
+
+
+.send-request {
+  background-color: $danger;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  height: 48px;
+  width: 160px;
+  border-radius: 16px;
+  margin: 8px;
+}
+
+.request-confirmation {
+  border: 1px solid black;
+}
