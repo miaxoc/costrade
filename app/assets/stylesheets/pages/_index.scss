@@ -22,6 +22,7 @@
   row-gap: 20px;
   justify-content: space-evenly;
   margin: 36px;
+  height: 900px;
 
   .costume-index-card {
     display: flex;
@@ -72,25 +73,59 @@
 
 
 //REQUEST INDEX
+.request-filter-bar {
+  display: flex;
+
+
+  .navbar-lewagon {
+    background-color: $light-gray;
+    margin: 0 auto;
+    width: 900px;
+    height: 70px;
+  }
+
+  .navbar-lewagon .navbar-collapse {
+    flex-grow: 0;
+  }
+  .request-filter-buttons {
+    text-decoration: none;
+    border-radius: 16px;
+    padding: 8px 16px;
+    background-color: white;
+    border: none;
+  }
+
+
+}
+
+
 .request-card {
-  height: 200px;
+  height: 180px;
   border-radius: 34px;
   background-color: white;
-  margin: 24px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 1000px;
+  margin: 0px auto;
 
   .request-card-head{
-    height: 50px;
+    height: 30px;
     border-radius: 34px 34px 0px 0px;
-    background-color: #D9D9D9;
+    background-color: $danger;
     padding: 8px 24px;
+    p {
+      font-size: 16px;
+      color: white;
+    }
   }
 
   .request-card-body {
     padding: 16px;
+    display: flex;
+    justify-content: space-between;
 
     .request-card-text {
       padding: 0px 16px;
+      width: 600px;
       .request-index-card-title {
         text-decoration: none;
         color: $dark-gray
@@ -120,7 +155,7 @@
     justify-content: center;
 
     .request-accept{
-      background-color: $warning;
+      background-color: $danger;
       font-size: 20px;
       color: white;
       text-align: center;
@@ -128,6 +163,7 @@
       border-radius: 16px;
       margin: 8px;
       font-weight: 700;
+      opacity: 50%;
     }
 
     .request-decline{

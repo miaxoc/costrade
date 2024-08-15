@@ -25,9 +25,16 @@ class RequestsController < ApplicationController
 
   def index
     @requests = Request.where(user: current_user)
+    @pending_requests = Request.where(user: current_user, status: 0)
+    @accepted_requests = Request.where(user: current_user, status: 1)
+    @declined_requests = Request.where(user: current_user, status: 2)
+    @completed_requests = Request.where(user: current_user, status: 3)
   end
 
   def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to request_path(@request), status: :see_other
   end
 
   private
