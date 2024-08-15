@@ -11,6 +11,7 @@ class CostumesController < ApplicationController
 
   def create
     @costume = Costume.new(costume_params)
+    @costume.user = current_user
     if @costume.save
       redirect_to costume_path(@costume)
     else
