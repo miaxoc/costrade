@@ -69,7 +69,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 5000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://images.halloweencostumes.ca/products/33320/2-1-301580/plus-size-womens-pirate-flag-gypsy-costume-alt-10.jpg"],
+    image_url: ["https://images.halloweencostumes.ca/products/33320/2-1-301580/plus-size-womens-pirate-flag-gypsy-costume-alt-10.jpg", "https://history-making.com/wpsite/wp-content/uploads/2018/10/1730-pirate-captain-with-cutlass.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_QHfHKv5GD8hoJosWJEL6H7bkP8SN4GzqKQ&s", "https://m.media-amazon.com/images/I/81UgB399AhL._AC_UY1000_.jpg"],
     user: User.all.sample
   },
   {
@@ -78,7 +78,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 4000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTkwNTgwODcyOTMxMzg3MjYw/diy-witch-costumes-00-png.png"],
+    image_url: ["https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTkwNTgwODcyOTMxMzg3MjYw/diy-witch-costumes-00-png.png", "https://hips.hearstapps.com/hmg-prod/images/diy-witch-costumes-1-1629149157.jpeg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBw_m0QcO45XpK_3GLNHrs6Tf340zh14C-6Q&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWz4HAwsEHYGiIIoHWLXiFCG6tPrpQTgnIUg&s"],
     user: User.all.sample
   },
   {
@@ -87,7 +87,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 6000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://www.speerise.com/cdn/shop/articles/blog_9.1.jpg?v=1630489805"],
+    image_url: ["https://www.speerise.com/cdn/shop/articles/blog_9.1.jpg?v=1630489805", "https://images.halloweencostumes.com/media/13/superman/superman-costume-for-adults.jpg", "https://4.bp.blogspot.com/-hRJJ4qMwiBg/VFDpPD_txfI/AAAAAAAAjXs/XlpW_fLU6JE/s1600/Superman%2Band%2BWonder%2BWoman-1.jpg", "https://henchman4hire.com/wp-content/uploads/2016/10/dc-superhero-girls-costumes-01.jpg"],
     user: User.all.sample
   },
   {
