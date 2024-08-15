@@ -1,4 +1,4 @@
-<div class="container w-50 mt-3">
+<div class="form container w-50 mt-3" style="background-color: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
   <h2>List a costume</h2>
   <%= simple_form_for [@costume] do |f| %>
     <%# <%= f.association :user %>
@@ -8,6 +8,8 @@
     <%= f.input :price %>
     <%= f.input :category %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
+    <div class="text-center">
+      <%= f.submit "Submit", class: "send-request no-border-btn" %>
+    </div>
   <% end %>
 </div>
