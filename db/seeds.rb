@@ -22,10 +22,12 @@ puts "destroying users..."
 User.destroy_all
 
 # ----Creates our users so we can log in----
-User.create(email: 'mia@gmail.com', username: 'mia', password: 'miamia')
-User.create(email: 'yu@gmail.com', username: 'yu', password: 'yuyu')
-User.create(email: 'akitaka@gmail.com', username: 'akitaka', password: 'akitakaakitaka')
-User.create(email: 'max@gmail.com', username: 'max', password: 'maxmax')
+mia = User.create(email: 'mia@gmail.com', username: 'mia', password: 'miamia')
+yu = User.create(email: 'yu@gmail.com', username: 'yu', password: 'yuyu')
+akitaka = User.create(email: 'akitaka@gmail.com', username: 'akitaka', password: 'akitakaakitaka')
+max = User.create(email: 'max@gmail.com', username: 'max', password: 'maxmax')
+
+key_users = [mia, yu, akitaka, max]
 
 10.times do
   user = User.new({
@@ -144,9 +146,9 @@ costumes = [
   }
 ]
 
-
+finished_costumes = []
 costumes.each do |costume_hash|
-  costume = Costume.new({
+   finished_costumes << costume = Costume.new({
     title: costume_hash[:title],
     description: costume_hash[:description],
     size: costume_hash[:size],
@@ -157,12 +159,13 @@ costumes.each do |costume_hash|
   costume.save!
   #, filename: "nes.png", content_type: "image/png"
   costume_hash[:image_url].each do |image_url|
+    puts "attaching image..."
     file = URI.open(image_url)
     costume.photos.attach(io: file, filename: "costume.png")
   end
 
   costume.save
-  3.times do
+  5.times do
     start_date = Faker::Date.backward(days: 25)
     end_date = Faker::Date.between(from: start_date, to: start_date + 20.days)
 
@@ -184,6 +187,21 @@ costumes.each do |costume_hash|
     })
   end
 end
+
+puts finished_costumes
+
+# key_users.each do |user|
+#   puts "making #{user.username}'s requests"
+#     start_date = Faker::Date.backward(days: 25)
+#     end_date = Faker::Date.between(from: start_date, to: start_date + 20.days)
+#   Request.create({
+#     costume: finished_costumes.sample,
+#     user: user,
+#     status: Request.statuses.keys.sample,
+#     start_date: start_date,
+#     end_date: end_date,
+#   })
+# end
 
 puts "created #{User.count} Users"
 puts "created #{Costume.count} Costumes"
