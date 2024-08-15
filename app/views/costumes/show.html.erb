@@ -6,20 +6,20 @@
     <div class="col">
       <div class="show-left">
         <div class = "costume-show-image-primary">
-          <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[0]) : "https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg", alt: @costume.title, style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+          <%= cl_image_tag @costume.photos.attached? ? @costume.photos[0].key : "https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg", alt: @costume.title, style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
         </div>
         <div class="row">
           <div class="costume-show-image-secondary">
-            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+            <%= cl_image_tag @costume.photos.attached? ? @costume.photos[2].key : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
           <div class="costume-show-image-secondary">
-            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[1]) : "https://img.fruugo.com/product/2/49/693407492_max.jpg", alt: "Thumbnail 1", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+            <%= cl_image_tag @costume.photos.attached? ? @costume.photos[1].key : "https://img.fruugo.com/product/2/49/693407492_max.jpg", alt: "Thumbnail 1", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
           <div class="costume-show-image-secondary">
-            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+            <%= cl_image_tag @costume.photos.attached? ? @costume.photos[2].key : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
           <div class="costume-show-image-secondary">
-            <%= image_tag @costume.photos.attached? ? url_for(@costume.photos[2]) : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+            <%= cl_image_tag @costume.photos.attached? ? @costume.photos[2].key : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
         </div>
       </div>
@@ -28,8 +28,8 @@
       <div class="show-right">
         <div class="costume-show-text">
           <div class="costume-head d-flex justify-content-between" style="height: 80px;">
-            <h1><%= @costume.title %></h1>
-            <%= image_tag @costume.user.photo.attached? ? url_for(@costume.user.photo) : src="https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no", class: "rounded-circle mr-2 ", alt: "user-avatar", style: "height: 60px; width: 60px;" %>
+            <h1 class="show-costume-title"><%= @costume.title %></h1>
+            <%= cl_image_tag @costume.user.photo.attached? ? @costume.user.photo.key : "https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no", class: "rounded-circle mr-2 ", alt: "user-avatar", style: "height: 60px; width: 60px;" %>
           </div>
           <div>
             <p class="my-2"><%= @costume.description %></p>
@@ -49,7 +49,7 @@
       <% @costume.reviews.each do |review| %>
         <div class="review" style= "margin: 20px">
           <%=  review.user.username %>
-          <%= image_tag review.user.photo.attached? ? review.user.photo : "" %>
+          <%= cl_image_tag review.user.photo.attached? ? review.user.photo : "" %>
           <div class="review-infos">
             <h2><%= review.rating %></h2>
             <p><%= review.content %></p>
