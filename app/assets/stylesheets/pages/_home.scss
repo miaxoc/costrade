@@ -6,18 +6,14 @@ p {
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 106px 0px 46px;
-  position: relative;
+  padding: 58px 0px 46px;
+  // position: relative;
 }
 .logo_img{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
+  height: 228px;
 }
 .banner h1 {
   margin: 0;

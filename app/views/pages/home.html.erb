@@ -1,12 +1,13 @@
 <%# -------- Banner -------- %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/home_banner.png);">
-  <div class="container">
-    <h1><strong>Costrade</strong></h1>
-    <p>Rent costumes with 3 easy steps!</p>
-    <%= link_to "Sign up Now!", new_user_registration_path, class: "btn btn-danger text-white mt-3 p-2" %>
-  <%= image_tag 'costrade_logo.png', alt: "logo", class: "logo_img" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i0.wp.com/tokyotreatblog.wpcomstaging.com/wp-content/uploads/2022/12/tokyotreat_cosplay.png?w=1024&ssl=1;">
+    <div class="row">
+      <div class="col mx-5 justify-content-start">
+        <%= image_tag 'costrade_logo.png', alt: "logo", class: "logo_img" %>
+        <%= link_to "Sign up Now!", new_user_registration_path, class: "btn btn-danger text-white mt-3 p-2" %>
+  </div>
   </div>
 </div>
+
 
 <%# -------- 3 easy steps images -------- %>
 <div class="container mb-5">
