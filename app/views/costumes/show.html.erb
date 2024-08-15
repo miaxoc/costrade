@@ -49,9 +49,9 @@
       <div class="all-reviews">
         <% @costume.reviews.each do |review| %>
           <div class="review">
-            <%# <%=  review.user %>
-            <%# <%= review.rating %>
-            <%# <%= review.content %>
+            <%=  review.user %>
+            <%= review.rating %>
+            <%= review.content %>
             <%= image_tag review.user.photo.attached? ? review.user.photo : "logo.jpg" %>
             <div class="review-infos">
               <h2><%= review.rating %></h2>
