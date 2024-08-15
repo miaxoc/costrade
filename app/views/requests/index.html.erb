@@ -10,19 +10,6 @@
   </div>
 
   <div data-requests-target="pending" style="display: block;">
-    <%= render 'requests/pending', request: @requests %>
+    <%= render 'requests/request_tabs', request: @requests %>
   </div>
-
-  <div data-requests-target="accepted" style="display: none;">
-    <%= render 'requests/accepted', request: @requests %>
-  </div>
-
-  <div data-requests-target="declined" style="display: none;">
-    <%= render 'requests/declined', request: @requests %>
-  </div>
-
-  <div data-requests-target="completed" style="display: none;">
-    <%= render 'requests/completed', request: @requests %>
-  </div>
-
 </div>
