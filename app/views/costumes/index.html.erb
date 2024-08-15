@@ -1,6 +1,8 @@
 <div class="container">
-  <h2 class="border-bottom my-3" style="margin-left: 36px;">Costume listings</h2>
-
+  <div class="d-flex justify-content-between">
+    <h2 class="border-bottom my-3" style="margin-left: 36px;">Costume listings</h2>
+    <%= link_to 'Add costume listing', '/costumes/new', class: "new-costume text-decoration-none" %>
+  </div>
   <div class="wrapper">
     <% @costumes.each do |costume| %>
       <div class="costume-index-card">
