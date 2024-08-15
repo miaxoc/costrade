@@ -31,4 +31,9 @@ class CostumesController < ApplicationController
 
   def destroy
   end
+
+  def costume_params
+    params.require(:costume).permit(:title, :description, :size, :price, :category, photos: [])
+  end
+
 end
