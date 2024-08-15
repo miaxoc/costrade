@@ -28,7 +28,7 @@
       <div class="show-right">
         <div class="costume-show-text">
           <div class="costume-head d-flex justify-content-between" style="height: 80px;">
-            <h1><%= @costume.title %></h1>
+            <h1 class="show-costume-title"><%= @costume.title %></h1>
             <%= cl_image_tag @costume.user.photo.attached? ? @costume.user.photo.key : "https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no", class: "rounded-circle mr-2 ", alt: "user-avatar", style: "height: 60px; width: 60px;" %>
           </div>
           <div>
