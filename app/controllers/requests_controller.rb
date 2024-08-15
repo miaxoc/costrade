@@ -29,6 +29,10 @@ class RequestsController < ApplicationController
     @accepted_requests = Request.where(user: current_user, status: 1)
     @declined_requests = Request.where(user: current_user, status: 2)
     @completed_requests = Request.where(user: current_user, status: 3)
+
+    if params[:status].present?
+      @requests= @requests.where(status: params[:status])
+    end
   end
 
   def destroy
