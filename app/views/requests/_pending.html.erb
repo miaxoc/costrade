@@ -9,14 +9,14 @@
       <p>Total: request.price (not working)</p>
     </div>
     <div class="request-card-body d-flex">
-      <%= image_tag request.costume.photos.attached? ? cl_image_path(request.costume.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6OrIdCOEwzQymQ5-KxC7UxcwEHUgQ01czAA&s'), style: "width: 120px; height: 120px; border-radius: 19px;"%>
+      <%= image_tag request.costume.photos.attached? ? cl_image_path(request.costume.photos.first.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6OrIdCOEwzQymQ5-KxC7UxcwEHUgQ01czAA&s'), style: "width: 120px; height: 120px; border-radius: 19px;"%>
       <div class="request-card-text">
         <h5 class="request-index-card-title"><%= request.costume.title %></h5>
-        <p class="request-index-card-text"><%= request.costume.description[0, 100] %></p>
+        <p class="request-index-card-text"><%= request.costume.description[0, 160] %>...</p>
         <p class="request-index-card-price"><strong>Customer: </strong>@<%= request.costume.user.username %></p>
       </div>
       <div class="request-card-buttons">
-        <p class="request-accept">Request pending...</p>
+        <p class="request-accept">Request pending</p>
         <p class="request-decline"><%= link_to 'Cancel request', request_path(request), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your request?"}, class: "request-decline", style: "text-align: center; text-decoration: none;" %></p>
       </div>
     </div>
