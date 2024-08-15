@@ -6,9 +6,15 @@ p {
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 106px 0px 46px;
+  padding: 58px 0px 46px;
+  // position: relative;
 }
-
+.logo_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 228px;
+}
 .banner h1 {
   margin: 0;
   color: white;
