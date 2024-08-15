@@ -60,7 +60,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 4500,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://i5.walmartimages.com/seo/Spooktacular-Creations-Gothic-Vampire-Costume-Deluxe-Set-for-Boys-Kids-Halloween-Party-Dress-Up-Role-Play-Cloak-and-Accessories_839e6f3b-98c2-4fee-b6bf-f068e861b3a3.2eac5f7bb27488851bbe0e81272cd3df.jpeg?odnHeight=320&odnWidth=320&odnBg=FFFFFF", "https://www.marthastewart.com/thmb/QxGClxuKZBzs9x5lEa4sD36ZizA=/2000x1428/filters:no_upscale()/vampire-costume-mSD104880vmpr_138-artesia-0621-2000-cf4dd34eab194e92935a84b11f497281.jpg"],
+    image_url: ["https://i5.walmartimages.com/seo/Spooktacular-Creations-Gothic-Vampire-Costume-Deluxe-Set-for-Boys-Kids-Halloween-Party-Dress-Up-Role-Play-Cloak-and-Accessories_839e6f3b-98c2-4fee-b6bf-f068e861b3a3.2eac5f7bb27488851bbe0e81272cd3df.jpeg?odnHeight=320&odnWidth=320&odnBg=FFFFFF", "https://www.marthastewart.com/thmb/QxGClxuKZBzs9x5lEa4sD36ZizA=/2000x1428/filters:no_upscale()/vampire-costume-mSD104880vmpr_138-artesia-0621-2000-cf4dd34eab194e92935a84b11f497281.jpg", "https://i.pinimg.com/736x/27/c8/d3/27c8d3ddf49f3ffcb635ce3e08712be4.jpg", "https://media.istockphoto.com/id/1343495773/photo/boy-in-halloween-vampire-makeup-costume.jpg?s=612x612&w=0&k=20&c=zN7_3v1_mle3NdnfggIyVeqBCG8f1JH906u1PMa48dE="],
     user: User.all.sample
   },
   {
@@ -69,7 +69,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 5000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://images.halloweencostumes.ca/products/33320/2-1-301580/plus-size-womens-pirate-flag-gypsy-costume-alt-10.jpg"],
+    image_url: ["https://images.halloweencostumes.ca/products/33320/2-1-301580/plus-size-womens-pirate-flag-gypsy-costume-alt-10.jpg", "https://history-making.com/wpsite/wp-content/uploads/2018/10/1730-pirate-captain-with-cutlass.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_QHfHKv5GD8hoJosWJEL6H7bkP8SN4GzqKQ&s", "https://m.media-amazon.com/images/I/81UgB399AhL._AC_UY1000_.jpg"],
     user: User.all.sample
   },
   {
@@ -78,7 +78,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 4000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTkwNTgwODcyOTMxMzg3MjYw/diy-witch-costumes-00-png.png"],
+    image_url: ["https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTkwNTgwODcyOTMxMzg3MjYw/diy-witch-costumes-00-png.png", "https://hips.hearstapps.com/hmg-prod/images/diy-witch-costumes-1-1629149157.jpeg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBw_m0QcO45XpK_3GLNHrs6Tf340zh14C-6Q&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWz4HAwsEHYGiIIoHWLXiFCG6tPrpQTgnIUg&s"],
     user: User.all.sample
   },
   {
@@ -87,7 +87,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 6000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://www.speerise.com/cdn/shop/articles/blog_9.1.jpg?v=1630489805"],
+    image_url: ["https://www.speerise.com/cdn/shop/articles/blog_9.1.jpg?v=1630489805", "https://images.halloweencostumes.com/media/13/superman/superman-costume-for-adults.jpg", "https://4.bp.blogspot.com/-hRJJ4qMwiBg/VFDpPD_txfI/AAAAAAAAjXs/XlpW_fLU6JE/s1600/Superman%2Band%2BWonder%2BWoman-1.jpg", "https://henchman4hire.com/wp-content/uploads/2016/10/dc-superhero-girls-costumes-01.jpg"],
     user: User.all.sample
   },
   {
