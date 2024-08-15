@@ -1,28 +1,13 @@
 
 <div data-controller="requests">
   <div class="request-filter-bar my-3">
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <%= link_to "Pending (#{@pending_requests.count})", requests_path(status: "pending"), class: "request-filter-buttons #{"active" if params[:status] == "pending"}" %>
       <%= link_to "Accepted (#{@accepted_requests.count})", requests_path(status: "accepted"), class: "request-filter-buttons #{"active" if params[:status] == "accepted"}" %>
       <%= link_to "Declined (#{@declined_requests.count})", requests_path(status: "declined"), class: "request-filter-buttons #{"active" if params[:status] == "declined"}" %>
       <%= link_to "Completed (#{@completed_requests.count})", requests_path(status: "completed"), class: "request-filter-buttons #{"active" if params[:status] == "completed"}" %>
-    </div>
   </div>
 
   <div data-requests-target="pending" style="display: block;">
-    <%= render 'requests/pending', request: @requests %>
+    <%= render 'requests/request_tabs', request: @requests %>
   </div>
-
-  <div data-requests-target="accepted" style="display: none;">
-    <%= render 'requests/accepted', request: @requests %>
-  </div>
-
-  <div data-requests-target="declined" style="display: none;">
-    <%= render 'requests/declined', request: @requests %>
-  </div>
-
-  <div data-requests-target="completed" style="display: none;">
-    <%= render 'requests/completed', request: @requests %>
-  </div>
-
 </div>

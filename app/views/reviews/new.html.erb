@@ -1,0 +1,13 @@
+<div class="container w-50 mt-3">
+  <div class="d-flex justify-content-center">
+    <h2>Leave a review</h2>
+  </div>
+  <%= simple_form_for [:request, @review] do |f| %>
+    <div class="request-form-container w-50 mt-3 form-design">
+      <%= f.input :content, as: :text %> <!-- Assuming content is a text field -->
+      <%= f.input :rating, as: :select, collection: 1..5, prompt: "Select a rating" %>
+      <div class="actions">
+        <%= f.button :submit, "Submit", class: "send-request" %>
+      </div>
+    </div>
+  <% end %>
