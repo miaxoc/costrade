@@ -3,7 +3,7 @@ class Costume < ApplicationRecord
   has_many :requests
   has_many :reviews, through: :requests
 
-  validates :title, presence: true, length: { maximum: 18 }
+  validates :title, presence: true
   validates :description, presence: true
   SIZE = ['S', 'M', 'L']
   validates :size, presence: true, inclusion: { in: SIZE }
