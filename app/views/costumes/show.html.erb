@@ -43,11 +43,8 @@
       <% @costume.reviews.each do |review| %>
         <div class="review" style= "margin: 20px">
           <%=  review.user.username %>
-<<<<<<< HEAD
-          <%= cl_image_tag review.user.photo.attached? ? review.user.photo : "" %>
-=======
           <%= cl_image_tag review.user.photo.attached? ? review.user.photo.key : "https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no" %>
->>>>>>> master
+
           <div class="review-infos">
             <h2><%= review.rating %></h2>
             <p><%= review.content %></p>

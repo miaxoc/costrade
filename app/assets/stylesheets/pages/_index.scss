@@ -96,6 +96,10 @@
     border: none;
 
   }
+  .active {
+    background-color: $danger;
+    color: white
+  }
 
 
 }
