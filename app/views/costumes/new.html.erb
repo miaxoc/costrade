@@ -1,6 +1,5 @@
 <div class="container w-50 mt-3">
   <h2>List a costume</h2>
-
   <%= simple_form_for [@costume] do |f| %>
     <%# <%= f.association :user %>
     <%= f.input :title %>
@@ -8,7 +7,7 @@
     <%= f.input :size %>
     <%= f.input :price %>
     <%= f.input :category %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
 </div>
