@@ -1,2 +1,14 @@
-<h1>Costumes#new</h1>
-<p>Find me in app/views/costumes/new.html.erb</p>
+<div class="container w-50 mt-3">
+  <h2>List a costume</h2>
+
+  <%= simple_form_for [@costume] do |f| %>
+    <%# <%= f.association :user %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :size %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
