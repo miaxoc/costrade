@@ -3,10 +3,10 @@
   <div data-controller="requests">
     <div class="request-filter-bar">
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <button data-action="click->requests#pending-display" class="request-filter-buttons"> Pending</button>
-        <button data-action="click->requests#accepted-display" class="request-filter-buttons"> Accepted</button>
-        <button data-action="click->requests#declined-display" class="request-filter-buttons"> Declined</button>
-        <button data-action="click->requests#completed-display" class="request-filter-buttons"> Completed</button>
+        <%= link_to "Pending (#{@pending_requests.count})", requests_path(status: "pending"), class: "request-filter-buttons #{"active" if params[:status] == "pending"}" %>
+        <%= link_to "Accepted (#{@accepted_requests.count})", requests_path(status: "accepted"), class: "request-filter-buttons #{"active" if params[:status] == "accepted"}" %>
+        <%= link_to "Declined (#{@declined_requests.count})", requests_path(status: "declined"), class: "request-filter-buttons #{"active" if params[:status] == "declined"}" %>
+        <%= link_to "Completed (#{@completed_requests.count})", requests_path(status: "completed"), class: "request-filter-buttons #{"active" if params[:status] == "completed"}" %>
       </div>
     </div>
 
