@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     @request = Request.find(params[:request_id])
     @user = @request.user
     @review = Review.new(review_params)
@@ -17,7 +16,7 @@ class ReviewsController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
-end
+  end
 
   def update
   end
