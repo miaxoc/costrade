@@ -60,7 +60,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 4500,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://i5.walmartimages.com/seo/Spooktacular-Creations-Gothic-Vampire-Costume-Deluxe-Set-for-Boys-Kids-Halloween-Party-Dress-Up-Role-Play-Cloak-and-Accessories_839e6f3b-98c2-4fee-b6bf-f068e861b3a3.2eac5f7bb27488851bbe0e81272cd3df.jpeg?odnHeight=320&odnWidth=320&odnBg=FFFFFF", "https://www.marthastewart.com/thmb/QxGClxuKZBzs9x5lEa4sD36ZizA=/2000x1428/filters:no_upscale()/vampire-costume-mSD104880vmpr_138-artesia-0621-2000-cf4dd34eab194e92935a84b11f497281.jpg"],
+    image_url: ["https://i5.walmartimages.com/seo/Spooktacular-Creations-Gothic-Vampire-Costume-Deluxe-Set-for-Boys-Kids-Halloween-Party-Dress-Up-Role-Play-Cloak-and-Accessories_839e6f3b-98c2-4fee-b6bf-f068e861b3a3.2eac5f7bb27488851bbe0e81272cd3df.jpeg?odnHeight=320&odnWidth=320&odnBg=FFFFFF", "https://www.marthastewart.com/thmb/QxGClxuKZBzs9x5lEa4sD36ZizA=/2000x1428/filters:no_upscale()/vampire-costume-mSD104880vmpr_138-artesia-0621-2000-cf4dd34eab194e92935a84b11f497281.jpg", "https://i.pinimg.com/736x/27/c8/d3/27c8d3ddf49f3ffcb635ce3e08712be4.jpg", "https://media.istockphoto.com/id/1343495773/photo/boy-in-halloween-vampire-makeup-costume.jpg?s=612x612&w=0&k=20&c=zN7_3v1_mle3NdnfggIyVeqBCG8f1JH906u1PMa48dE="],
     user: User.all.sample
   },
   {

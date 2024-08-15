@@ -6,9 +6,10 @@
     <div class="col">
       <div class="show-left">
         <div class = "costume-show-image-primary">
-          <%= cl_image_tag @costume.photos.attached? ? @costume.photos[0].key : "https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg", alt: @costume.title, style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+          <%= cl_image_tag @costume.photos.attached? ? @costume.photos.first.key : "https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg", alt: @costume.title, style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
         </div>
         <div class="row">
+<<<<<<< HEAD
           <div class="costume-show-image-secondary">
             <%= cl_image_tag @costume.photos.attached? ? @costume.photos[2].key : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
@@ -21,6 +22,13 @@
           <div class="costume-show-image-secondary">
             <%= cl_image_tag @costume.photos.attached? ? @costume.photos[2].key : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
           </div>
+=======
+          <% @costume.photos.each do |photo| %>
+            <div class="costume-show-image-secondary">
+              <%= cl_image_tag @costume.photos.attached? ? photo.key : "https://uwowocosplay.com/cdn/shop/products/4_671b3fe8-c826-4701-8715-1ff8c3cc3743.jpg?v=1684991853", alt: "Thumbnail 2", style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;" %>
+            </div>
+          <% end %>
+>>>>>>> master
         </div>
       </div>
     </div>
@@ -49,7 +57,11 @@
       <% @costume.reviews.each do |review| %>
         <div class="review" style= "margin: 20px">
           <%=  review.user.username %>
+<<<<<<< HEAD
           <%= cl_image_tag review.user.photo.attached? ? review.user.photo : "" %>
+=======
+          <%= cl_image_tag review.user.photo.attached? ? review.user.photo.key : "https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no" %>
+>>>>>>> master
           <div class="review-infos">
             <h2><%= review.rating %></h2>
             <p><%= review.content %></p>
