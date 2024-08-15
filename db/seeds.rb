@@ -8,6 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require "open-uri"
+
+
 # ----Destroys everything----
 puts "destroying reviews..."
 Review.destroy_all
@@ -32,44 +35,160 @@ User.create(email: 'max@gmail.com', username: 'max', password: 'maxmax')
   })
   user.save! # Save the user to the database
 
+  # 3.times do
+  #   costume = Costume.new({
+  #     title: Faker::Commerce.product_name,
+  #     description: Faker::Lorem.sentence(word_count: 10),
+  #     size: Costume::SIZE.sample,
+  #     price: Faker::Commerce.price(range: 1000..10000.0),
+  #     category: Costume::CATEGORIES.sample,
+  #     image_url: Faker::LoremFlickr.image(size: "300x300", search_terms: ['clothing', 'fashion', 'costume']),
+  #     user: user
+  #   })
+  #   costume.save! # Save the costume to the database
+
+
+  # end
+end
+
+costumes = [
+  {
+    title: "Vampire Count Costume",
+    description: "An elegant and gothic vampire costume, perfect for a night of bloodsucking adventure. Includes a long black cape, a white shirt with a ruffled collar, and a pair of fangs.",
+    size: Costume::SIZE.sample,
+    price: 4500,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://i5.walmartimages.com/seo/Spooktacular-Creations-Gothic-Vampire-Costume-Deluxe-Set-for-Boys-Kids-Halloween-Party-Dress-Up-Role-Play-Cloak-and-Accessories_839e6f3b-98c2-4fee-b6bf-f068e861b3a3.2eac5f7bb27488851bbe0e81272cd3df.jpeg?odnHeight=320&odnWidth=320&odnBg=FFFFFF", "https://www.marthastewart.com/thmb/QxGClxuKZBzs9x5lEa4sD36ZizA=/2000x1428/filters:no_upscale()/vampire-costume-mSD104880vmpr_138-artesia-0621-2000-cf4dd34eab194e92935a84b11f497281.jpg"],
+    user: User.all.sample
+  },
+  {
+    title: "Pirate Captain Costume",
+    description: "Set sail for adventure with this authentic pirate captain outfit. The costume includes a tricorne hat, a red coat, a white ruffled shirt, and a pair of black boots.",
+    size: Costume::SIZE.sample,
+    price: 5000,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://images.halloweencostumes.ca/products/33320/2-1-301580/plus-size-womens-pirate-flag-gypsy-costume-alt-10.jpg"],
+    user: User.all.sample
+  },
+  {
+    title: "Witch's Enchantment Costume",
+    description: "Cast spells and brew potions in this enchanting witch costume. Features a pointed hat, a black dress with purple accents, and a broomstick for flying.",
+    size: Costume::SIZE.sample,
+    price: 4000,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTkwNTgwODcyOTMxMzg3MjYw/diy-witch-costumes-00-png.png"],
+    user: User.all.sample
+  },
+  {
+    title: "Superhero Defender Costume",
+    description: "Become the hero your city needs with this iconic superhero costume. Includes a muscle-bound suit, a flowing cape, and a mask to conceal your identity.",
+    size: Costume::SIZE.sample,
+    price: 6000,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://www.speerise.com/cdn/shop/articles/blog_9.1.jpg?v=1630489805"],
+    user: User.all.sample
+  },
+  {
+    title: "Medieval Knight Armor",
+    description: "Defend your kingdom in this realistic knight armor costume. The set includes a metallic helmet, a chainmail shirt, and a sword to vanquish your enemies.",
+    size: Costume::SIZE.sample,
+    price: 7000,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://i.etsystatic.com/35882827/r/il/cd5f18/5362074699/il_fullxfull.5362074699_9fh5.jpg", "https://m.media-amazon.com/images/I/71I-w2zc39L._AC_UF1000,1000_QL80_.jpg"],
+    user: User.all.sample
+  },
+  {
+    title: "Classic Clown Costume",
+    description: "Bring joy and laughter to any party with this colorful clown costume. Includes a bright wig, a rainbow jumpsuit, oversized shoes, and a red nose.",
+    size: Costume::SIZE.sample,
+    price: 3000,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOzROkZ_rUJNY6yNANW52_QwlVilaTkvlXEg&s"],
+    user: User.all.sample
+  },
+  {
+    title: "Ghostly Apparition Costume",
+    description: "Haunt your friends with this eerie ghost costume. The costume features a flowing white sheet with eyeholes cut out, perfect for a spooky night of scares.",
+    size: Costume::SIZE.sample,
+    price: 3500,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://m.media-amazon.com/images/I/61gXkoBfi7L._AC_UY1000_.jpg", "https://cdn.outsideonline.com/wp-content/uploads/2023/10/halloween_costumes_S.jpg"],
+    user: User.all.sample
+  },
+  {
+    title: "Greek Goddess Costume",
+    description: "Channel your inner deity with this stunning Greek goddess costume. The outfit includes a flowing white dress with golden accents and a laurel wreath crown.",
+    size: Costume::SIZE.sample,
+    price: 5500,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://www.fashionnova.com/cdn/shop/products/GreekGoddess4PieceCostumeSet-Creamcombo_MER_468x.jpg?v=1695746491", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsGPu3BNdKW2w0q0gmUP0tuIV6esR3QvcjkQ&s"],
+    user: User.all.sample
+  },
+  {
+    title: "Zombie Walker Costume",
+    description: "Rise from the grave with this terrifying zombie costume. Features tattered clothes, a rotting mask, and fake blood for that freshly undead look.",
+    size: Costume::SIZE.sample,
+    price: 4200,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJvDXOqWqKjOGAmJ5AvADfEcR2J76RVDNc7g&s"],
+    user: User.all.sample
+  },
+  {
+    title: "Royal Prince Costume",
+    description: "Rule the kingdom in style with this royal prince costume. The outfit includes a regal velvet jacket, matching pants, a gold crown, and a scepter.",
+    size: Costume::SIZE.sample,
+    price: 4800,
+    category: Costume::CATEGORIES.sample,
+    image_url: ["https://images.halloweencostumes.com/media/13/prince/royal-prince-costume.jpg"],
+    user: User.all.sample
+  }
+]
+
+
+costumes.each do |costume_hash|
+  costume = Costume.new({
+    title: costume_hash[:title],
+    description: costume_hash[:description],
+    size: costume_hash[:size],
+    price: costume_hash[:price],
+    category: costume_hash[:category],
+    user: costume_hash[:user]
+  })
+  costume.save!
+  #, filename: "nes.png", content_type: "image/png"
+  costume_hash[:image_url].each do |image_url|
+    file = URI.open(image_url)
+    costume.photos.attach(io: file, filename: "costume.png")
+  end
+
+  costume.save
   3.times do
-    costume = Costume.new({
-      title: Faker::Commerce.product_name,
-      description: Faker::Lorem.sentence(word_count: 10),
-      size: Costume::SIZE.sample,
-      price: Faker::Commerce.price(range: 1000..10000.0),
-      category: Costume::CATEGORIES.sample,
-      image_url: Faker::LoremFlickr.image(size: "300x300", search_terms: ['clothing', 'fashion', 'costume']),
-      user: user
+    start_date = Faker::Date.backward(days: 25)
+    end_date = Faker::Date.between(from: start_date, to: start_date + 20.days)
+
+    request = Request.new({
+      costume: costume,
+      user: User.where.not(id: costume.user.id).sample,
+      status: Request.statuses.keys.sample,
+      start_date: start_date,
+      end_date: end_date,
     })
-    costume.save! # Save the costume to the database
+    request.save! # Save the request to the database
 
-    3.times do
-      start_date = Faker::Date.backward(days: 25)
-      end_date = Faker::Date.between(from: start_date, to: start_date + 20.days)
-
-      request = Request.new({
-        costume: costume,
-        user: user,
-        status: 2,
-        start_date: start_date,
-        end_date: end_date,
-      })
-      request.save! # Save the request to the database
-
-      3.times do
-        Review.create({
-          content: Faker::Lorem.sentence(word_count: 20),
-          rating: rand(1..5), # Generate a random rating between 1 and 5
-          user: user,
-          request: request,
-        })
-      end
-    end
+    ## if request.finished? make a review
+    Review.create!({
+      content: Faker::Lorem.sentence(word_count: 20),
+      rating: rand(1..5), # Generate a random rating between 1 and 5
+      user: request.user,
+      request: request,
+    })
   end
 end
 
-
+puts "created #{User.count} Users"
+puts "created #{Costume.count} Costumes"
+puts "created #{Request.count} Requests"
+puts "created #{Review.count} Reviews"
 
 
 

@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_014928) do
   create_table "requests", force: :cascade do |t|
     t.bigint "costume_id", null: false
     t.bigint "user_id", null: false
-    t.integer "status", default: 0
+    t.boolean "status"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
