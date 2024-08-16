@@ -28,7 +28,7 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find(params[:id])
     if @request.update(request_params)
-      redirect_to requests_path
+      redirect_to my_requests_path
     else
       render 'requests/form', status: :unprocessable_entity
     end
