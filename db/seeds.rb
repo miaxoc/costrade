@@ -178,13 +178,14 @@ costumes.each do |costume_hash|
     })
     request.save! # Save the request to the database
 
-    ## if request.finished? make a review
-    Review.create!({
-      content: Faker::Lorem.sentence(word_count: 20),
-      rating: rand(1..5), # Generate a random rating between 1 and 5
-      user: request.user,
-      request: request,
-    })
+    # if request.completed?
+    #   Review.create!({
+    #     content: Faker::Lorem.sentence(word_count: 20),
+    #     rating: rand(1..5), # Generate a random rating between 1 and 5
+    #     user: request.user,
+    #     request: request,
+    #   })
+    # end
   end
 end
 
