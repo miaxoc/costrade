@@ -22,10 +22,10 @@ puts "destroying users..."
 User.destroy_all
 
 # ----Creates our users so we can log in----
-mia = User.create(email: 'mia@gmail.com', username: 'mia', password: 'miamia')
-yu = User.create(email: 'yu@gmail.com', username: 'yu', password: 'yuyu')
-akitaka = User.create(email: 'akitaka@gmail.com', username: 'akitaka', password: 'akitakaakitaka')
-max = User.create(email: 'max@gmail.com', username: 'max', password: 'maxmax')
+mia = User.create!(email: 'mia@gmail.com', username: 'mia', password: 'miamia')
+yu = User.create!(email: 'yu@gmail.com', username: 'yu', password: 'yuyuyu')
+akitaka = User.create!(email: 'akitaka@gmail.com', username: 'akitaka', password: 'akitakaakitaka')
+max = User.create!(email: 'max@gmail.com', username: 'max', password: 'maxmax')
 
 key_users = [mia, yu, akitaka, max]
 
@@ -165,13 +165,13 @@ costumes.each do |costume_hash|
   end
 
   costume.save
-  5.times do
+  20.times do
     start_date = Faker::Date.backward(days: 25)
     end_date = Faker::Date.between(from: start_date, to: start_date + 20.days)
 
     request = Request.new({
       costume: costume,
-      user: User.where.not(id: costume.user.id).sample,
+      user: User.where.not(costumes: costume).sample,
       status: Request.statuses.keys.sample,
       start_date: start_date,
       end_date: end_date,
@@ -189,7 +189,7 @@ costumes.each do |costume_hash|
   end
 end
 
-puts finished_costumes
+# puts finished_costumes
 
 # key_users.each do |user|
 #   puts "making #{user.username}'s requests"
