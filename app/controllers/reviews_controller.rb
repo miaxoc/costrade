@@ -7,9 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     @request = Request.find(params[:request_id])
-    @user = @request.user
     @review = Review.new(review_params)
-    @review.user = @user
+    @review.user = current_user
     @review.request= @request
     if @review.save
       redirect_to costume_path(@request.costume)
