@@ -10,28 +10,27 @@ class RequestsController < ApplicationController
     else
       render 'requests/form', status: :unprocessable_entity
     end
-
-    # respond_to do |format|
-
-      # if @request.save
-        # format.html { redirect_to costume_path(@costume) }
-        # format.json { redirect_to costume_path(@costume) } # Follows the classic Rails flow and look for a create.json view
-      # else
-      #   format.html { render "requests/new", status: :unprocessable_entity }
-      #   format.json # Follows the classic Rails flow and look for a create.json view
-      # end
-    # end
   end
 
   def index
-    @requests = Request.where(user: current_user)
+    @requests = current_user.requests
     @pending_requests = Request.where(user: current_user, status: 0)
     @accepted_requests = Request.where(user: current_user, status: 1)
     @declined_requests = Request.where(user: current_user, status: 2)
     @completed_requests = Request.where(user: current_user, status: 3)
+    @my_requests = current_user.requests_as_owner
 
     if params[:status].present?
       @requests= @requests.where(status: params[:status])
+    end
+  end
+
+  def update
+    @request = Request.find(params[:id])
+    if @request.update(request_params)
+      redirect_to my_requests_path
+    else
+      render 'requests/form', status: :unprocessable_entity
     end
   end
 
@@ -44,6 +43,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:start_date, :end_date)
+    params.require(:request).permit(:start_date, :end_date, :status)
   end
 end

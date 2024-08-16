@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   has_many :costumes
   has_many :requests
+  has_many :requests_as_owner, through: :costumes, class_name: "Request", source: :requests
 
   # validates :description
   # validates :location
