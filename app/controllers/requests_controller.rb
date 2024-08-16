@@ -43,6 +43,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:start_date, :end_date)
+    params.require(:request).permit(:start_date, :end_date, :status)
   end
 end
