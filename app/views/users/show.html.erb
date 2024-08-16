@@ -1,2 +1,16 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<div class="container">
+  <div class="user-show-photo", style="width: 300x; height: 300px; background-color: gray;">
+  <%= cl_image_tag @user.photo.attached? ? @user.photo.key : "https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no", class: "", alt: "user-avatar", style: "" %>
+  <%= @user.username %>
+
+
+
+
+
+  <% @user.costumes.all.each do |costume| %>
+    <%= costume.title %>
+  <% end %>
+</div>
