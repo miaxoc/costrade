@@ -96,7 +96,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 7000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://i.etsystatic.com/35882827/r/il/cd5f18/5362074699/il_fullxfull.5362074699_9fh5.jpg", "https://m.media-amazon.com/images/I/71I-w2zc39L._AC_UF1000,1000_QL80_.jpg"],
+    image_url: ["https://i.etsystatic.com/35882827/r/il/cd5f18/5362074699/il_fullxfull.5362074699_9fh5.jpg", "https://m.media-amazon.com/images/I/71I-w2zc39L._AC_UF1000,1000_QL80_.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgZQ2Yn10yyc985QWG0qCNy-dcYdfJTSG1RA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfUVPF6nzytu7y9NmrZumwGd9ub8yoj4JgnQ&s"],
     user: User.all.sample
   },
   {
@@ -105,7 +105,7 @@ costumes = [
     size: Costume::SIZE.sample,
     price: 3000,
     category: Costume::CATEGORIES.sample,
-    image_url: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOzROkZ_rUJNY6yNANW52_QwlVilaTkvlXEg&s"],
+    image_url: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOzROkZ_rUJNY6yNANW52_QwlVilaTkvlXEg&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYvVIEnGBYhltxD4ZRBi3WU4zTLmidBgPaVg&s"],
     user: User.all.sample
   },
   {

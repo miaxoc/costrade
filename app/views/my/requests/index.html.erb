@@ -1,0 +1,15 @@
+<h1>Requests you have recieved</h1>
+
+<%= link_to "outgoing requests", requests_path, class: "btn btn-warning" %>
+<div data-controller="requests">
+  <div class="request-filter-bar my-3">
+      <%= link_to "Pending (#{@pending_requests.count})", my_requests_path(status: "pending"), class: "request-filter-buttons #{"active" if params[:status] == "pending"}" %>
+      <%= link_to "Accepted (#{@accepted_requests.count})", my_requests_path(status: "accepted"), class: "request-filter-buttons #{"active" if params[:status] == "accepted"}" %>
+      <%= link_to "Declined (#{@declined_requests.count})", my_requests_path(status: "declined"), class: "request-filter-buttons #{"active" if params[:status] == "declined"}" %>
+      <%= link_to "Completed (#{@completed_requests.count})", my_requests_path(status: "completed"), class: "request-filter-buttons #{"active" if params[:status] == "completed"}" %>
+  </div>
+
+  <div data-requests-target="pending" style="display: block;">
+    <%= render 'requests/request_tabs', request: @requests %>
+  </div>
+</div>

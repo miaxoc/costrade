@@ -1,4 +1,6 @@
+<h1>Requests you have made</h1>
 
+<%= link_to "incoming requests", my_requests_path, class: "btn btn-warning" %>
 <div data-controller="requests">
   <div class="request-filter-bar my-3">
       <%= link_to "Pending (#{@pending_requests.count})", requests_path(status: "pending"), class: "request-filter-buttons #{"active" if params[:status] == "pending"}" %>
