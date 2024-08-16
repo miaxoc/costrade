@@ -35,6 +35,21 @@ key_users = [mia, yu, akitaka, max]
     username: Faker::Internet.username,
     password: Faker::Internet.password(min_length: 8)
   })
+    # Save the user to the database
+
+  # gender options: 'all' or 'male' or 'female'
+  gender = 'all'
+  # age options: 'all' or '12-18' or '19-25' or '26-35' or '35-50' or '50+'
+  age = '26-35'
+  # ethnicity options: 'all' or 'asian' or 'white' or 'black' or 'indian' or 'middle_eastern' or 'latino_hispanic'
+  ethnicity = 'all'
+  url = "https://this-person-does-not-exist.com/new?gender=#{gender}&age=#{age}&etnic=#{ethnicity}"
+  json = URI.open(url).string
+  src = JSON.parse(json)['src']
+  photo_url = "https://this-person-does-not-exist.com#{src}"
+  file = URI.open(photo_url)
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
   user.save! # Save the user to the database
 
   # 3.times do

@@ -3,7 +3,8 @@
   <div class="user-show-top row d-flex" style="width: 1000px;" >
 
     <div class="left-profile-pic col-4">
-      <%= image_tag 'default_user_signedin_img.png', style: "width: 300px; height: 300px; border-radius: 50%;" %>
+
+      <%= cl_image_tag @user.photo.attached? ? @user.photo.key : "https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg", style: "width: 300px; height: 300px; border-radius: 50%;" %>
       <%# cl_image_tag @user.photo.attached? ? @user.photo.key : "https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg", class: "user-show-photo ", alt: "user-avatar", style: "width: 300px; border: 1px black solid;" %>
     </div>
 
