@@ -2,7 +2,16 @@ class CostumesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @costumes = Costume.all
+    if params[:query].present?
+      @costumes = Costume.search_by_title_and_description(params[:query])
+    else
+      @costumes = Costume.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
