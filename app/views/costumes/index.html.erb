@@ -3,6 +3,11 @@
     <h2 class="my-3" style="margin-left: 36px;">Costume listings</h2>
     <%= link_to 'Add costume listing', '/costumes/new', class: "new-costume text-decoration-none" %>
   </div>
+  <div id="costume-search">
+    <%= form_with(url: costumes_path, method: :get, local: false, id: 'search-form') do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search costumes...", class: "form-control" %>
+    <% end %>
+  </div>
   <div class="wrapper">
     <% @costumes.each do |costume| %>
       <div class="costume-index-card">
