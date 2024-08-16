@@ -1,22 +1,42 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container mt-5 d-flex flex-column align-items-center">
 
-<div class="container" style="width: 1000px;">
-  <div class="row d-flex justify-content-center">
-    <div class="user-show-photo col", style="background-color: gray; border-radius: 50%;">
-      <%= cl_image_tag @user.photo.attached? ? @user.photo.key : "https://lh3.googleusercontent.com/a/ACg8ocIVADxXTymJNIDRswlN4rz-pcJz13cUMNcXPXMjMSGSAqU--q5y=s360-c-no", class: "", alt: "user-avatar", style: "" %>
+  <div class="user-show-top row d-flex" style="width: 1000px;" >
+
+    <div class="left-profile-pic col-4">
+      <%= image_tag 'default_user_signedin_img.png', style: "width: 300px; height: 300px; border-radius: 50%;" %>
+      <%# cl_image_tag @user.photo.attached? ? @user.photo.key : "https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg", class: "user-show-photo ", alt: "user-avatar", style: "width: 300px; border: 1px black solid;" %>
     </div>
-    <div class="col">
+
+    <div class="right-profile-info col">
       <h2>@<%= @user.username %></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
 
+  </div>
+
+  <div class="row user-show-listings">
+
+    <div class="user-show-listings-costumes" >
+      <div class="d-flex justify-content-between border-bottom">
+        <h2 class="my-3" style="margin-left: 36px;">@<%= @user.username%>'s costume listings</h2>
+      </div>
+
+      <div class="wrapper">
+        <% @user.costumes.all.each do |costume| %>
+          <div class="costume-index-card">
+            <div class="costume-image-placeholder">
+              <%= image_tag costume.photos.attached? ? cl_image_path(costume.photos.first.key) : image_path('https://i.etsystatic.com/12503620/r/il/0260a0/2006887017/il_570xN.2006887017_jttt.jpg'), style: "height: 100%; width: 100%; border-radius: 24px; margin-bottom: 8px; object-fit: cover;"%>
+            </div>
+            <h5><%= link_to costume.title, costume_path(costume), class: "costume-index-card-title" %></h5>
+            <p class="costume-index-card-text"><%= costume.description[0,20] %>...  <%= link_to 'see more', costume_path(costume) %></p>
+            <p class="costume-index-card-price"><strong><%= costume.price %></strong> jpy/day</p>
+          </div>
 
 
+        <% end %>
+      </div>
 
-    <div class="row">
-      <% @user.costumes.all.each do |costume| %>
-        <%= costume.title %>
-      <% end %>
     </div>
   </div>
+
 </div>
